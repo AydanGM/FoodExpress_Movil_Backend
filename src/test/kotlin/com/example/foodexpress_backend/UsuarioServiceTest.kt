@@ -12,7 +12,7 @@ class UsuarioServiceTests(@Autowired val usuarioService: UsuarioService) {
 
     @Test
     fun `crear usuario funciona`() {
-        val usuario = Usuario(nombre = "Test User", email = "test@example.com", password = "Password1!")
+        val usuario = Usuario(nombre = "Test User", correo = "test@example.com", password = "Password1!")
         val creado = usuarioService.añadirUsuario(usuario)
         assertNotNull(creado.id)
         assertEquals("Test User", creado.nombre)

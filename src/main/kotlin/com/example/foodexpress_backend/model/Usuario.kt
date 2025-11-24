@@ -21,14 +21,14 @@ data class Usuario(
     )
     var nombre: String,
 
-    @field:NotBlank(message = "El email no puede estar vacío")
-    @field:Email(message = "El email debe tener un formato válido")
+    @field:NotBlank(message = "El correo no puede estar vacío")
+    @field:Email(message = "El correo debe tener un formato válido")
     @Column(unique = true)
-    var email: String,
+    var correo: String,
 
     @field:Size(min = 8, message = "La contraseña debe tener al menos 8 caracteres")
     @field:Pattern(
-        regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@\$!%*?&])[A-Za-z\\d@\$!%*?&]+$",
+        regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[^A-Za-z\\d]).+$",
         message = "La contraseña debe incluir mayúscula, minúscula, número y símbolo"
     )
     var password: String

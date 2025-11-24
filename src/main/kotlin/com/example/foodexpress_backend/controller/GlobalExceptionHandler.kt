@@ -18,7 +18,7 @@ class GlobalExceptionHandler {
 
     @ExceptionHandler(DataIntegrityViolationException::class)
     fun handleDuplicateKey(ex: DataIntegrityViolationException): ResponseEntity<Map<String, String>> {
-        val error = mapOf("email" to "El email ya está registrado")
+        val error = mapOf("correo" to "El correo ya está registrado")
         return ResponseEntity(error, HttpStatus.CONFLICT) // 409 Conflict
     }
 }

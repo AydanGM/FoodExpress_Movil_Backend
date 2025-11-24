@@ -5,4 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface UsuarioRepository : JpaRepository<Usuario, Long>
+interface UsuarioRepository : JpaRepository<Usuario, Long> {
+    fun findByCorreo(correo: String): Usuario?
+    fun existsByCorreo(correo: String): Boolean
+}
